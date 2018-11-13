@@ -12,17 +12,16 @@ public class Main {
 
         int t = in.nextInt();
 
-        int y = myPow(x, t);
+        int y = myPowR(x, t);
 
         System.out.println("Число x = " + x
-                + ", возведенное в степень 2 равно " + y);
+                + ", возведенное в степень " + t + "  равно " + y);
     }
 
-    static int myPow(int x1, int t1) {
-        int z = 0;
-        if(t1 == 2) z = x1 * x1;
-        return z;
+    static int myPowR(int x, int t){
+        if(t == 0) return 1;
+        else if(t == 1) return x;
+        else return x * myPowR(x,t-1);
     }
-
 
 }
